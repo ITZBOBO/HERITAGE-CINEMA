@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Play, Clock, ChevronLeft, ChevronRight, X, ArrowRight, Ticket } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
+import { Play, Clock, ChevronLeft, ChevronRight, X, Ticket, Info, MapPin } from 'lucide-react';
 import { MOVIES } from '../../data/cinemaData';
 import { useBooking } from '../../context/BookingContext';
 import './HeroCarousel.css';
@@ -9,10 +9,11 @@ export const HeroCarousel = () => {
   const featuredMovies = MOVIES.slice(0, 4); // Apaara, Omotara Johnson, Spider-Man, Njem
   const [currentIndex, setCurrentIndex] = useState(0);
   const [trailerModalOpen, setTrailerModalOpen] = useState(false);
-  const { startBookingForMovie } = useBooking();
+  const { draft, startBookingForMovie } = useBooking();
   const navigate = useNavigate();
 
   const currentMovie = featuredMovies[currentIndex] || featuredMovies[0];
+  const selectedLocation = draft.location || { name: 'Heritage Cinemas — Mowe' };
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? featuredMovies.length - 1 : prev - 1));
@@ -41,9 +42,9 @@ export const HeroCarousel = () => {
   return (
     <section className="hero-carousel-section">
       <div className="container">
-        {/* Main Carousel Card */}
+        {/* Main Cinematic Carousel Card */}
         <div className="hero-carousel-card">
-          {/* Background image & gradient overlay */}
+          {/* Background movie artwork & cinematic gradient overlay */}
           <div
             className="hero-slide-bg"
             style={{ backgroundImage: `url(${currentMovie.heroImage})` }}
@@ -56,78 +57,115 @@ export const HeroCarousel = () => {
             type="button"
             className="carousel-arrow-btn arrow-prev"
             onClick={handlePrev}
-            aria-label="Previous Slide"
+            aria-label="Previous featured movie"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={22} />
           </button>
           <button
             type="button"
             className="carousel-arrow-btn arrow-next"
             onClick={handleNext}
-            aria-label="Next Slide"
+            aria-label="Next featured movie"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={22} />
           </button>
 
-          {/* Slide Content Grid */}
-          <div className="hero-slide-content-grid">
-            {/* Left Info Column */}
+          {/* Slide Content */}
+          <div className="hero-slide-content">
             <div className="hero-left-info">
-              {/* Play Trailer Pill */}
-              <button
-                type="button"
-                className="play-trailer-pill-btn"
-                onClick={() => setTrailerModalOpen(true)}
-              >
-                <div className="play-circle-icon">
-                  <Play size={12} fill="currentColor" />
-                </div>
-                <span>Play Trailer</span>
-              </button>
-
-              {/* Title */}
-              <h1 className="hero-main-title">{currentMovie.title}</h1>
-
-              {/* Duration Meta */}
-              <div className="hero-duration-meta">
-                <Clock size={15} className="clock-icon" />
-                <span>{currentMovie.runtime}</span>
+              {/* Badge & Certification */}
+              <div className="hero-pill-row">
+                <span className="hero-experience-badge">PREMIUM CINEMA</span>
+                {currentMovie.ageRating && (
+                  <span className="hero-age-badge">{currentMovie.ageRating}</span>
+                )}
+                {currentMovie.formats && currentMovie.formats.includes('DOLBY') && (
+                  <span className="hero-format-pill">DOLBY ATMOS</span>
+                )}
               </div>
 
-              {/* Action Buttons */}
+              {/* Single Dominant Title */}
+              <h1 className="hero-main-title">{currentMovie.title}</h1>
+
+              {/* Tagline */}
+              {currentMovie.tagline && (
+                <p className="hero-tagline">{currentMovie.tagline}</p>
+              )}
+
+              {/* Movie Meta Information */}
+              <div className="hero-meta-strip">
+                <div className="meta-item">
+                  <Clock size={15} className="meta-icon" />
+                  <span>{currentMovie.runtime}</span>
+                </div>
+                <span className="meta-dot">•</span>
+                <span className="meta-genre">{currentMovie.genre.join(', ')}</span>
+                {currentMovie.rating && (
+                  <>
+                    <span className="meta-dot">•</span>
+                    <span className="meta-rating">★ {currentMovie.rating}</span>
+                  </>
+                )}
+              </div>
+
+              {/* Primary & Secondary Action Buttons */}
               <div className="hero-btn-row">
                 <button
                   type="button"
-                  className="btn-buy-tickets-purple"
+                  className="btn-primary hero-btn-buy"
                   onClick={handleBuyTickets}
                 >
-                  <Ticket size={16} />
+                  <Ticket size={18} />
                   <span>Buy Tickets</span>
                 </button>
+
                 <button
                   type="button"
-                  className="btn-more-info-pill"
-                  onClick={handleMoreInfo}
+                  className="btn-secondary hero-btn-trailer"
+                  onClick={() => setTrailerModalOpen(true)}
                 >
-                  <span>More Info</span>
-                  <ArrowRight size={14} />
+                  <Play size={16} fill="currentColor" />
+                  <span>Watch Trailer</span>
                 </button>
-              </div>
-            </div>
 
-            {/* Right Stylized Title Graphic / Poster Composition */}
-            <div className="hero-right-graphic">
-              <div className="graphic-title-display">
-                <span className="big-display-title">{currentMovie.titleLogo || currentMovie.shortTitle || currentMovie.title}</span>
-                <span className="sub-tagline-display">{currentMovie.tagline}</span>
+                <button
+                  type="button"
+                  className="btn-secondary hero-btn-info"
+                  onClick={handleMoreInfo}
+                  aria-label="View Movie Details"
+                >
+                  <Info size={16} />
+                  <span>Details</span>
+                </button>
               </div>
             </div>
           </div>
+
+          {/* Slide Indicator Dots */}
+          <div className="hero-slide-indicators">
+            {featuredMovies.map((m, idx) => (
+              <button
+                key={m.id}
+                type="button"
+                className={`indicator-dot ${idx === currentIndex ? 'active' : ''}`}
+                onClick={() => setCurrentIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* Location Notice Helper text matching reference */}
-        <div className="location-notice-helper">
-          <p>Please select a location to view available showtimes.</p>
+        {/* Location & Showtime Status Bar */}
+        <div className="location-showtime-status-bar">
+          <div className="location-status-left">
+            <MapPin size={16} className="loc-status-pin" />
+            <span className="loc-status-label">
+              Showing at <strong className="loc-active-name">{selectedLocation.name}</strong>
+            </span>
+          </div>
+          <Link to="/booking/location" className="change-location-action">
+            Change location →
+          </Link>
         </div>
       </div>
 

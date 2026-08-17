@@ -37,7 +37,7 @@ export const TopNav = () => {
         <nav className="center-nav-menu">
           <NavLink
             to="/movies"
-            className={({ isActive }) => `header-nav-item ${isActive ? 'active' : ''}`}
+            className={({ isActive }) => `header-nav-item nav-item-tickets ${isActive ? 'active' : ''}`}
           >
             Buy Tickets
           </NavLink>

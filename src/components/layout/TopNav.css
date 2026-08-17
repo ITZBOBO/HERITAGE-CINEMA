@@ -51,6 +51,11 @@
   color: var(--accent-text);
 }
 
+.header-nav-item.nav-item-tickets {
+  color: var(--accent-text);
+  font-weight: 800;
+}
+
 .header-nav-item.active {
   color: var(--accent-text);
 }

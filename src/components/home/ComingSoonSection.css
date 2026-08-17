@@ -1,110 +1,188 @@
 .coming-soon-poster-section {
-  padding: 16px 0 64px;
+  padding: 32px 0 64px;
 }
 
 .coming-soon-main-heading {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
   font-weight: 800;
   color: var(--accent-text);
-  margin-bottom: 24px;
   letter-spacing: -0.02em;
 }
 
-.no-movies-notice {
+.coming-soon-subheading {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--body-text);
-  padding: 12px 0;
 }
 
-.coming-soon-grid {
+/* Balanced 2-Column Spotlight Grid */
+.coming-soon-curated-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
 }
 
-.coming-soon-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.coming-soon-poster-box {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 2/3;
-  border-radius: var(--radius-sm);
+.coming-soon-featured-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
   overflow: hidden;
+  border-radius: var(--radius-card);
   background-color: var(--card-surface);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-card);
   transition: border-color var(--transition-fast);
-  display: block;
 }
 
-.coming-soon-card:hover .coming-soon-poster-box {
+.coming-soon-featured-card:hover {
   border-color: var(--border-solid);
 }
 
-.coming-soon-img {
+/* Poster Column */
+.cs-poster-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  background-color: var(--surface-variant);
+  overflow: hidden;
+}
+
+.cs-poster-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.9;
+  display: block;
 }
 
-.coming-soon-badge-ribbon {
+.cs-badge-year {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: var(--surface-variant-2);
+  background-color: rgba(31, 15, 13, 0.92);
+  border-top: 1px solid var(--border-color);
   color: var(--accent-text);
   font-family: var(--font-heading);
   font-size: 0.72rem;
   font-weight: 700;
   text-align: center;
-  padding: 5px;
+  padding: 6px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
-.coming-soon-info {
-  margin-top: 10px;
+.cs-age-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(31, 15, 13, 0.9);
+  border: 1px solid var(--border-color);
+  color: var(--accent-text);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  z-index: 2;
+}
+
+/* Content Column */
+.cs-content-wrap {
+  padding: 24px 22px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 12px;
 }
 
-.coming-soon-title {
+.cs-genres-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.cs-movie-title {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 800;
   color: var(--accent-text);
   line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
-.coming-soon-genre {
+.cs-movie-tagline {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
+  color: var(--accent-text);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.cs-movie-synopsis {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  color: var(--body-text);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cs-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 4px;
+}
+
+.cs-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
   color: var(--body-text);
 }
 
-@media (max-width: 1200px) {
-  .coming-soon-grid {
-    grid-template-columns: repeat(4, 1fr);
+.cs-meta-icon {
+  color: var(--accent-text);
+  flex-shrink: 0;
+}
+
+/* Actions Row */
+.cs-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 10px;
+  flex-wrap: wrap;
+}
+
+.cs-trailer-btn {
+  padding: 10px 16px;
+  font-size: 0.86rem;
+}
+
+.cs-details-btn {
+  padding: 9px 14px;
+  font-size: 0.86rem;
+}
+
+@media (max-width: 960px) {
+  .coming-soon-curated-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 860px) {
-  .coming-soon-grid {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 600px) {
+  .coming-soon-featured-card {
+    grid-template-columns: 1fr;
   }
-}
-
-@media (max-width: 540px) {
-  .coming-soon-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+  .cs-poster-wrap {
+    min-height: 240px;
+    aspect-ratio: 16/9;
   }
 }
