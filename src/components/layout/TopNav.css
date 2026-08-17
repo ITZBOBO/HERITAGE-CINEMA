@@ -15,45 +15,20 @@
   gap: 20px;
 }
 
-/* Brand Logo */
+/* Brand Logo (Transparent wordmark) */
 .site-logo-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
+  background: transparent;
+  padding: 0;
+  border: none;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
-.logo-badge-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: linear-gradient(135deg, #7c3aed 0%, #e50914 100%);
-  color: #ffffff;
-  border-radius: 8px;
-}
-
-.logo-title-wrap {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-}
-
-.logo-main-text {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 900;
-  color: #ffffff;
-  letter-spacing: -0.02em;
-}
-
-.logo-accent-text {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #a855f7;
-  letter-spacing: -0.02em;
+.site-logo-brand:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
 }
 
 /* Center Navigation */

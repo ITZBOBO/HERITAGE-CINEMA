@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Film, Send, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
+import { HeritageLogo } from '../common/HeritageLogo';
 import './Footer.css';
 
 export const Footer = () => {
@@ -29,10 +30,9 @@ export const Footer = () => {
           {/* Col 1: Cinema Solution By Brand Logo */}
           <div className="footer-col-solution">
             <span className="solution-label">Cinema Solution By</span>
-            <div className="cine-sync-badge">
-              <div className="cine-dot" />
-              <span className="cine-brand-name">HERITAGE <span className="cine-accent">CINEMAS</span></span>
-            </div>
+            <Link to="/" className="footer-logo-link">
+              <HeritageLogo height={32} />
+            </Link>
             <p className="footer-branch-note">
               Abule-Egba, Lagos & Mowe, Ogun State
             </p>

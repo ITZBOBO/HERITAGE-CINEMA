@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Film, User, Mail, Lock, Phone, ArrowRight } from 'lucide-react';
+import { User, Mail, Lock, Phone, ArrowRight } from 'lucide-react';
+import { HeritageLogo } from '../common/HeritageLogo';
 import { useAuth } from '../../context/AuthContext';
 import './AuthForms.css';
 
@@ -55,10 +56,10 @@ export const SignUpForm = () => {
   return (
     <div className="auth-form-card card-surface">
       <div className="auth-form-header">
-        <div className="auth-logo-badge">
-          <Film size={28} />
-        </div>
-        <h1 className="auth-title">Join Heritage Cinema</h1>
+        <Link to="/" className="auth-logo-wrapper">
+          <HeritageLogo height={42} />
+        </Link>
+        <h1 className="auth-title">Join Heritage Cinemas</h1>
         <p className="auth-subtitle">Create an account to book tickets, save favorites, and manage your cinema passes.</p>
       </div>
 
@@ -107,7 +108,7 @@ export const SignUpForm = () => {
               id="signup-phone"
               type="tel"
               name="phone"
-              placeholder="+1 (555) 000-0000"
+              placeholder="+234 800 000 0000"
               value={formData.phone}
               onChange={handleChange}
               className="input-control field-input"

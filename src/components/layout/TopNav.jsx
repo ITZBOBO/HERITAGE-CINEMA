@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { Film, Search, User, LogOut, Ticket, ShoppingCart, Menu, X } from 'lucide-react';
+import { Search, User, LogOut, Ticket, ShoppingCart, Menu, X } from 'lucide-react';
+import { HeritageLogo } from '../common/HeritageLogo';
 import { useAuth } from '../../context/AuthContext';
 import { useBooking } from '../../context/BookingContext';
 import './TopNav.css';
@@ -27,15 +28,9 @@ export const TopNav = () => {
   return (
     <header className="main-site-header">
       <div className="container main-header-container">
-        {/* Left: Brand Logo matching screenshot */}
+        {/* Left: Official Heritage Cinemas Transparent Logo */}
         <Link to="/" className="site-logo-brand" onClick={() => setMobileMenuOpen(false)}>
-          <div className="logo-badge-icon">
-            <Film className="film-icon" size={22} />
-          </div>
-          <div className="logo-title-wrap">
-            <span className="logo-main-text">HERITAGE</span>
-            <span className="logo-accent-text">CINEMAS</span>
-          </div>
+          <HeritageLogo height={36} />
         </Link>
 
         {/* Center: Navigation Links */}

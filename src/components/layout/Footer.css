@@ -14,7 +14,7 @@
 
 .footer-columns-grid {
   display: grid;
-  grid-template-columns: 1.2fr 2.4fr 1fr 1fr;
+  grid-template-columns: 1.4fr 2.2fr 1fr 1fr;
   gap: 40px;
 }
 
@@ -22,7 +22,7 @@
 .footer-col-solution {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .solution-label {
@@ -31,34 +31,18 @@
   font-weight: 500;
 }
 
-.cine-sync-badge {
+.footer-logo-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background-color: #1a1b20;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 8px 14px;
-  border-radius: 8px;
-  width: fit-content;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  border: none;
+  transition: opacity var(--transition-fast);
 }
 
-.cine-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #a855f7;
-}
-
-.cine-brand-name {
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.01em;
-}
-
-.cine-accent {
-  color: #a855f7;
+.footer-logo-link:hover {
+  opacity: 0.85;
 }
 
 .footer-branch-note {

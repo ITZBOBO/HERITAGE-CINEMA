@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Film, Mail, Lock, ArrowRight } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Mail, Lock, ArrowRight } from 'lucide-react';
+import { HeritageLogo } from '../common/HeritageLogo';
 import { useAuth } from '../../context/AuthContext';
 import './AuthForms.css';
 
@@ -12,6 +13,9 @@ export const SignInForm = () => {
   const [error, setError] = useState('');
   const { signIn } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const redirectPath = location.state?.from || '/movies';
 
   const handleChange = (e) => {
     setFormData(prev => ({
@@ -25,26 +29,26 @@ export const SignInForm = () => {
     setError('');
 
     if (!formData.email || !formData.password) {
-      setError('Please enter both email and password.');
+      setError('Please enter your email and password.');
       return;
     }
 
-    signIn({
-      email: formData.email,
-      password: formData.password
-    });
-
-    navigate('/my-bookings');
+    const success = signIn(formData.email, formData.password);
+    if (success) {
+      navigate(redirectPath);
+    } else {
+      setError('Invalid credentials.');
+    }
   };
 
   return (
     <div className="auth-form-card card-surface">
       <div className="auth-form-header">
-        <div className="auth-logo-badge">
-          <Film size={28} />
-        </div>
+        <Link to="/" className="auth-logo-wrapper">
+          <HeritageLogo height={42} />
+        </Link>
         <h1 className="auth-title">Welcome Back</h1>
-        <p className="auth-subtitle">Sign in to access your booked tickets, preferences, and fast checkout.</p>
+        <p className="auth-subtitle">Sign in to access your Heritage Cinema passes, rewards, and booking history.</p>
       </div>
 
       {error && <div className="auth-error-banner">{error}</div>}
@@ -58,7 +62,7 @@ export const SignInForm = () => {
               id="signin-email"
               type="email"
               name="email"
-              placeholder="e.g. alex.vance@cinema.heritage"
+              placeholder="e.g. john@example.com"
               value={formData.email}
               onChange={handleChange}
               className="input-control field-input"
@@ -70,7 +74,9 @@ export const SignInForm = () => {
         <div className="form-group">
           <div className="label-with-action">
             <label className="form-label" htmlFor="signin-password">Password</label>
-            <a href="#forgot" className="forgot-link" onClick={(e) => { e.preventDefault(); alert('Password reset link sent to email.'); }}>Forgot?</a>
+            <a href="#forgot" className="forgot-pass-link" onClick={(e) => { e.preventDefault(); alert('Password reset link sent to email!'); }}>
+              Forgot password?
+            </a>
           </div>
           <div className="input-with-icon">
             <Lock size={18} className="field-icon" />
@@ -93,13 +99,9 @@ export const SignInForm = () => {
         </button>
       </form>
 
-      <div className="auth-demo-hint">
-        <span>💡 Demo: Use any email and password to sign in instantly.</span>
-      </div>
-
       <div className="auth-footer-note">
         <span>Don't have an account?</span>
-        <Link to="/signup" className="auth-switch-link">Sign Up</Link>
+        <Link to="/signup" className="auth-switch-link">Create Account</Link>
       </div>
     </div>
   );
