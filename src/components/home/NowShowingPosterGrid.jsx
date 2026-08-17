@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowRight, Ticket } from 'lucide-react';
+import { ArrowRight, Ticket, ChevronLeft, ChevronRight } from 'lucide-react';
 import { MOVIES } from '../../data/cinemaData';
 import { useBooking } from '../../context/BookingContext';
 import './NowShowingPosterGrid.css';
@@ -9,6 +9,7 @@ export const NowShowingPosterGrid = () => {
   const nowShowingMovies = MOVIES.filter((m) => m.status === 'now_showing');
   const { startBookingForMovie } = useBooking();
   const navigate = useNavigate();
+  const railRef = useRef(null);
 
   const handleQuickBook = (e, movie) => {
     e.preventDefault();
@@ -17,25 +18,62 @@ export const NowShowingPosterGrid = () => {
     navigate('/booking/location');
   };
 
+  const scrollLeft = () => {
+    if (railRef.current) {
+      const scrollAmount = railRef.current.clientWidth * 0.8;
+      railRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (railRef.current) {
+      const scrollAmount = railRef.current.clientWidth * 0.8;
+      railRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="now-showing-poster-section">
       <div className="container">
-        {/* Section Header with View All link */}
+        {/* Section Header with Navigation Controls & View All link */}
         <div className="section-header-row">
           <div className="section-header-left">
             <h2 className="now-showing-main-heading">Now Showing</h2>
-            <p className="now-showing-subheading">Catch the latest blockbuster releases on our premium screens</p>
+            <p className="now-showing-subheading">Catch the latest releases on our screens</p>
           </div>
-          <Link to="/movies?filter=now_showing" className="view-all-link">
-            <span>View All</span>
-            <ArrowRight size={16} />
-          </Link>
+
+          <div className="section-header-actions">
+            {/* Rail Scroll Arrows */}
+            <div className="rail-arrow-controls">
+              <button
+                type="button"
+                className="rail-arrow-btn"
+                onClick={scrollLeft}
+                aria-label="Scroll left"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                type="button"
+                className="rail-arrow-btn"
+                onClick={scrollRight}
+                aria-label="Scroll right"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
+
+            <Link to="/movies?filter=now_showing" className="view-all-link">
+              <span>View All</span>
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
 
-        {/* 5-Column Responsive Movie Poster Grid */}
-        <div className="now-showing-poster-grid">
+        {/* Horizontal Movie Rail (5-Poster Desktop Presentation) */}
+        <div className="now-showing-rail-container" ref={railRef}>
           {nowShowingMovies.map((movie) => (
-            <div key={movie.id} className="filmhouse-poster-card">
+            <div key={movie.id} className="filmhouse-poster-card rail-item">
               <Link to={`/movies/${movie.id}`} className="poster-link-wrapper">
                 <div className="poster-image-box">
                   <img

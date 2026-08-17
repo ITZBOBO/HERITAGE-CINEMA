@@ -31,6 +31,38 @@
   color: var(--body-text);
 }
 
+.section-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Rail Arrow Controls */
+.rail-arrow-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rail-arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--surface-variant);
+  border: 1px solid var(--border-color);
+  color: var(--body-text);
+  transition: all var(--transition-fast);
+}
+
+.rail-arrow-btn:hover {
+  background-color: var(--surface-variant-2);
+  color: var(--accent-text);
+  border-color: var(--border-solid);
+}
+
 .view-all-link {
   display: inline-flex;
   align-items: center;
@@ -40,22 +72,33 @@
   font-size: 0.9rem;
   font-weight: 700;
   padding: 4px 0;
-  transition: all var(--transition-fast);
+  transition: color var(--transition-fast);
 }
 
 .view-all-link:hover {
   color: var(--white);
-  transform: translateX(2px);
 }
 
-/* 5-Column Grid on Desktop */
-.now-showing-poster-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 22px;
+/* Horizontal Movie Rail (5-Poster Desktop Presentation) */
+.now-showing-rail-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 8px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / Edge */
 }
 
-.filmhouse-poster-card {
+.now-showing-rail-container::-webkit-scrollbar {
+  display: none; /* Chrome / Safari / Opera */
+}
+
+.filmhouse-poster-card.rail-item {
+  flex: 0 0 calc((100% - 80px) / 5); /* Exactly 5 posters per view on desktop */
+  min-width: 0;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
 }
@@ -178,23 +221,30 @@
   color: var(--body-text);
 }
 
-/* Responsive Grid Breakpoints */
+/* Responsive Rail Breakpoints */
 @media (max-width: 1200px) {
-  .now-showing-poster-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .filmhouse-poster-card.rail-item {
+    flex: 0 0 calc((100% - 60px) / 4); /* 4 on medium screens */
   }
 }
 
 @media (max-width: 900px) {
-  .now-showing-poster-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+  .now-showing-rail-container {
+    gap: 16px;
+  }
+  .filmhouse-poster-card.rail-item {
+    flex: 0 0 calc((100% - 32px) / 3); /* 3 on tablets */
   }
 }
 
-@media (max-width: 580px) {
-  .now-showing-poster-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 600px) {
+  .now-showing-rail-container {
     gap: 14px;
+  }
+  .filmhouse-poster-card.rail-item {
+    flex: 0 0 calc((100% - 14px) / 2.15); /* ~2.2 on mobile for peek cue */
+  }
+  .rail-arrow-controls {
+    display: none;
   }
 }

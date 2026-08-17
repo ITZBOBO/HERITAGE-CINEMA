@@ -180,8 +180,27 @@
 @media (max-width: 600px) {
   .footer-columns-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
   .form-name-row {
     grid-template-columns: 1fr;
+  }
+  .newsletter-form-row {
+    flex-direction: column;
+    width: 100%;
+  }
+  .newsletter-input {
+    width: 100%;
+    min-height: 44px;
+  }
+  .newsletter-submit-btn {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+  }
+  .footer-vertical-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
   }
 }

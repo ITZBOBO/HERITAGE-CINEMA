@@ -1,52 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Utensils, Volume2, Armchair, ArrowRight, Box } from 'lucide-react';
+import { Sparkles, Utensils, Film, ArrowRight, Box } from 'lucide-react';
 import './CinemaExperienceSection.css';
 
 export const CinemaExperienceSection = () => {
-  const experiences = [
-    {
-      id: 'the-cube',
-      title: 'The Cube',
-      tagline: 'Experience cinema differently.',
-      description: 'Our signature ultra-exclusive screening environment designed for VIP movie lovers, private screenings, and premiere gatherings.',
-      icon: Box,
-      ctaText: 'Explore The Cube',
-      ctaLink: '/movies?filter=now_showing',
-      featured: true
-    },
-    {
-      id: 'immersive-av',
-      title: '4K Laser & Dolby Audio',
-      tagline: 'Precision sound & crystal optics.',
-      description: 'Cutting-edge digital 4K projection paired with multi-channel Dolby Atmos spatial surround sound for true sensory immersion.',
-      icon: Volume2,
-      ctaText: 'View Showtimes',
-      ctaLink: '/movies',
-      featured: false
-    },
-    {
-      id: 'gourmet-snacks',
-      title: 'Gourmet Food & Drinks',
-      tagline: 'Cinema classics, freshly prepared.',
-      description: 'Signature warm butter popcorn, artisan shawarma, cheesy nachos, and chilled beverages delivered straight to your cinema seat.',
-      icon: Utensils,
-      ctaText: 'Explore Concessions',
-      ctaLink: '/booking/snacks',
-      featured: false
-    },
-    {
-      id: 'luxury-recliners',
-      title: 'VIP Luxury Recliners',
-      tagline: 'First-class comfort on every row.',
-      description: 'Plush motorized leather recliners with expansive legroom, personal swivel trays, and an unobstructed view of the big screen.',
-      icon: Armchair,
-      ctaText: 'Book VIP Seats',
-      ctaLink: '/movies',
-      featured: false
-    }
-  ];
-
   return (
     <section className="cinema-experience-section">
       <div className="container">
@@ -54,40 +11,79 @@ export const CinemaExperienceSection = () => {
         <div className="experience-header">
           <div className="experience-badge-pill">
             <Sparkles size={14} className="sparkle-icon" />
-            <span>MORE THAN JUST MOVIES</span>
+            <span>HERITAGE EXPERIENCE</span>
           </div>
-          <h2 className="experience-main-title">Crafted for Film Enthusiasts</h2>
+          <h2 className="experience-main-title">More Than Just Movies</h2>
           <p className="experience-subtitle">
-            A cinematic experience built around legendary storytelling, supreme comfort, and unforgettable hospitality.
+            A cinematic destination built around great storytelling, warm hospitality, and unforgettable moments.
           </p>
         </div>
 
-        {/* Experience Cards Grid */}
-        <div className="experience-cards-grid">
-          {experiences.map((exp) => {
-            const IconComponent = exp.icon;
-            return (
-              <div
-                key={exp.id}
-                className={`experience-card card-surface ${exp.featured ? 'featured-cube-card' : ''}`}
-              >
-                <div className="exp-icon-wrap">
-                  <IconComponent size={22} className="exp-icon" />
-                </div>
-
-                <div className="exp-content">
-                  <h3 className="exp-title">{exp.title}</h3>
-                  <span className="exp-tagline">{exp.tagline}</span>
-                  <p className="exp-desc">{exp.description}</p>
-                </div>
-
-                <Link to={exp.ctaLink} className="exp-cta-link">
-                  <span>{exp.ctaText}</span>
-                  <ArrowRight size={15} />
-                </Link>
+        {/* Premium Brand Showcase Layout */}
+        <div className="experience-brand-layout">
+          {/* Flagship Spotlight: The Cube */}
+          <div className="the-cube-spotlight-card card-surface">
+            <div className="cube-spotlight-content">
+              <div className="cube-badge-row">
+                <span className="cube-badge-tag">
+                  <Box size={14} />
+                  <span>THE CUBE</span>
+                </span>
+                <span className="cube-signature-label">Signature Screen</span>
               </div>
-            );
-          })}
+
+              <h3 className="cube-spotlight-title">Experience Cinema Differently</h3>
+              
+              <p className="cube-spotlight-desc">
+                Our exclusive screening environment designed for premier movie gatherings, private screenings, and audiences seeking an elevated cinematic atmosphere.
+              </p>
+
+              <Link to="/movies?filter=now_showing" className="btn-primary cube-cta-btn">
+                <span>Explore The Cube</span>
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            <div className="cube-decorative-visual">
+              <div className="cube-visual-badge">
+                <Box size={32} className="cube-large-icon" />
+                <span className="cube-visual-text">THE CUBE</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Secondary Pillars Grid */}
+          <div className="experience-pillars-grid">
+            {/* Gourmet Food & Concessions */}
+            <div className="experience-pillar-card card-surface">
+              <div className="pillar-icon-wrap">
+                <Utensils size={20} />
+              </div>
+              <h4 className="pillar-title">Gourmet Food & Drinks</h4>
+              <p className="pillar-desc">
+                Freshly popped butter popcorn, grilled shawarma, cheesy nachos, and chilled refreshments ready for showtime.
+              </p>
+              <Link to="/booking/snacks" className="pillar-link">
+                <span>Concession Menu</span>
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+
+            {/* Premium Big Screen */}
+            <div className="experience-pillar-card card-surface">
+              <div className="pillar-icon-wrap">
+                <Film size={20} />
+              </div>
+              <h4 className="pillar-title">The Big Screen Atmosphere</h4>
+              <p className="pillar-desc">
+                Crystal-clear projection, dynamic surround sound, and comfortable auditorium seating crafted for film lovers.
+              </p>
+              <Link to="/movies" className="pillar-link">
+                <span>View Showtimes</span>
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

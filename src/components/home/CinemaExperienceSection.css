@@ -8,8 +8,8 @@
   align-items: center;
   text-align: center;
   gap: 12px;
-  max-width: 680px;
-  margin: 0 auto 40px;
+  max-width: 640px;
+  margin: 0 auto 36px;
 }
 
 .experience-badge-pill {
@@ -20,10 +20,10 @@
   border: 1px solid var(--border-color);
   color: var(--accent-text);
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.1em;
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: var(--radius-badge);
 }
 
@@ -33,7 +33,7 @@
 
 .experience-main-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
   font-weight: 800;
   color: var(--accent-text);
   letter-spacing: -0.02em;
@@ -46,37 +46,151 @@
   line-height: 1.6;
 }
 
-/* 4-Card Grid */
-.experience-cards-grid {
+/* Editorial Brand Layout */
+.experience-brand-layout {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Flagship Spotlight: The Cube */
+.the-cube-spotlight-card {
+  position: relative;
+  border-radius: var(--radius-card);
+  background-color: var(--surface-variant);
+  border: 1px solid var(--border-solid);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--transition-fast);
+}
+
+.the-cube-spotlight-card:hover {
+  border-color: var(--primary-accent);
+}
+
+.cube-spotlight-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 440px;
+}
+
+.cube-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cube-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--primary-accent);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: var(--radius-badge);
+}
+
+.cube-signature-label {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-text);
+  opacity: 0.85;
+}
+
+.cube-spotlight-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 800;
+  color: var(--accent-text);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.cube-spotlight-desc {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--body-text);
+  line-height: 1.6;
+}
+
+.cube-cta-btn {
+  margin-top: 10px;
+  align-self: flex-start;
+  padding: 12px 22px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* Decorative visual for The Cube */
+.cube-decorative-visual {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cube-visual-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cube-large-icon {
+  width: 80px;
+  height: 80px;
+  color: var(--accent-text);
+}
+
+.cube-visual-text {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--accent-text);
+}
+
+/* Secondary Pillars Column */
+.experience-pillars-grid {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
-.experience-card {
-  display: flex;
-  flex-direction: column;
-  padding: 28px 24px;
+.experience-pillar-card {
+  padding: 24px 22px;
   border-radius: var(--radius-card);
   background-color: var(--card-surface);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-card);
-  transition: border-color var(--transition-fast), transform var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color var(--transition-fast);
 }
 
-.experience-card:hover {
+.experience-pillar-card:hover {
   border-color: var(--border-solid);
-  transform: translateY(-3px);
 }
 
-.featured-cube-card {
-  border-color: var(--primary-accent);
-  background-color: var(--surface-variant);
-}
-
-.exp-icon-wrap {
-  width: 44px;
-  height: 44px;
+.pillar-icon-wrap {
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-sm);
   background-color: var(--surface-variant);
   border: 1px solid var(--border-color);
@@ -84,75 +198,45 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 4px;
 }
 
-.featured-cube-card .exp-icon-wrap {
-  background-color: var(--primary-accent);
-  border-color: var(--primary-accent);
-  color: var(--white);
-}
-
-.exp-content {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex: 1;
-}
-
-.exp-title {
+.pillar-title {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--accent-text);
-  line-height: 1.25;
 }
 
-.exp-tagline {
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--accent-text);
-  opacity: 0.9;
-}
-
-.exp-desc {
+.pillar-desc {
   font-family: var(--font-body);
   font-size: 0.86rem;
   color: var(--body-text);
-  line-height: 1.55;
-  margin-top: 6px;
+  line-height: 1.5;
 }
 
-.exp-cta-link {
+.pillar-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-family: var(--font-heading);
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 700;
   color: var(--accent-text);
-  margin-top: 24px;
+  margin-top: 6px;
   transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
-.exp-cta-link:hover {
+.pillar-link:hover {
   color: var(--white);
   transform: translateX(3px);
 }
 
-@media (max-width: 1100px) {
-  .experience-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .experience-cards-grid {
+@media (max-width: 960px) {
+  .experience-brand-layout {
     grid-template-columns: 1fr;
   }
-  .experience-header {
-    text-align: left;
-    align-items: flex-start;
+  .the-cube-spotlight-card {
+    padding: 28px 24px;
   }
 }

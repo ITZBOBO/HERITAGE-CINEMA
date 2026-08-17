@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Play, X, Calendar, Film } from 'lucide-react';
+import { ArrowRight, Play, X } from 'lucide-react';
 import { MOVIES } from '../../data/cinemaData';
 import './ComingSoonSection.css';
 
@@ -15,7 +15,7 @@ export const ComingSoonSection = () => {
         <div className="section-header-row">
           <div className="section-header-left">
             <h2 className="coming-soon-main-heading">Coming Soon</h2>
-            <p className="coming-soon-subheading">Anticipated cinematic premieres heading to our screens</p>
+            <p className="coming-soon-subheading">Anticipated cinematic premieres arriving this year</p>
           </div>
           <Link to="/movies?filter=coming_soon" className="view-all-link">
             <span>View All</span>
@@ -23,12 +23,12 @@ export const ComingSoonSection = () => {
           </Link>
         </div>
 
-        {/* Balanced Featured Cards Layout */}
+        {/* Clean, Punchy Homepage Teaser Cards */}
         <div className="coming-soon-curated-grid">
           {comingSoonMovies.map((movie) => (
             <div key={movie.id} className="coming-soon-featured-card card-surface">
               {/* Poster Column */}
-              <div className="cs-poster-wrap">
+              <Link to={`/movies/${movie.id}`} className="cs-poster-wrap">
                 <img
                   src={movie.posterImage}
                   alt={movie.title}
@@ -39,37 +39,22 @@ export const ComingSoonSection = () => {
                 {movie.ageRating && (
                   <span className="cs-age-badge">{movie.ageRating}</span>
                 )}
-              </div>
+              </Link>
 
               {/* Content Column */}
               <div className="cs-content-wrap">
                 <div className="cs-genres-row">
-                  {movie.genre.map((g) => (
-                    <span key={g} className="badge-tag">{g}</span>
-                  ))}
-                  {movie.formats && movie.formats.includes('IMAX') && (
-                    <span className="badge-format">IMAX 3D</span>
-                  )}
+                  <span className="badge-tag">{movie.genre[0]}</span>
+                  {movie.genre[1] && <span className="badge-tag">{movie.genre[1]}</span>}
                 </div>
 
-                <h3 className="cs-movie-title">{movie.title}</h3>
+                <Link to={`/movies/${movie.id}`}>
+                  <h3 className="cs-movie-title">{movie.title}</h3>
+                </Link>
                 
                 {movie.tagline && (
                   <p className="cs-movie-tagline">{movie.tagline}</p>
                 )}
-
-                <p className="cs-movie-synopsis">{movie.synopsis}</p>
-
-                <div className="cs-meta-row">
-                  <div className="cs-meta-item">
-                    <Film size={14} className="cs-meta-icon" />
-                    <span>Directed by {movie.director}</span>
-                  </div>
-                  <div className="cs-meta-item">
-                    <Calendar size={14} className="cs-meta-icon" />
-                    <span>Expected {movie.releaseYear}</span>
-                  </div>
-                </div>
 
                 {/* Actions */}
                 <div className="cs-actions-row">
@@ -78,11 +63,11 @@ export const ComingSoonSection = () => {
                     className="btn-secondary cs-trailer-btn"
                     onClick={() => setActiveTrailer(movie)}
                   >
-                    <Play size={15} fill="currentColor" />
+                    <Play size={14} fill="currentColor" />
                     <span>Watch Trailer</span>
                   </button>
                   <Link to={`/movies/${movie.id}`} className="btn-outline cs-details-btn">
-                    <span>Movie Details</span>
+                    <span>More Info</span>
                     <ArrowRight size={14} />
                   </Link>
                 </div>

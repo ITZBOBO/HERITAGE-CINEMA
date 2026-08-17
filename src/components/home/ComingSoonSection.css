@@ -1,5 +1,5 @@
 .coming-soon-poster-section {
-  padding: 32px 0 64px;
+  padding: 32px 0 48px;
 }
 
 .coming-soon-main-heading {
@@ -16,16 +16,16 @@
   color: var(--body-text);
 }
 
-/* Balanced 2-Column Spotlight Grid */
+/* Balanced 2-Column Curated Teaser Grid */
 .coming-soon-curated-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 24px;
 }
 
 .coming-soon-featured-card {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 160px 1fr;
   overflow: hidden;
   border-radius: var(--radius-card);
   background-color: var(--card-surface);
@@ -43,9 +43,10 @@
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 280px;
+  min-height: 220px;
   background-color: var(--surface-variant);
   overflow: hidden;
+  display: block;
 }
 
 .cs-poster-img {
@@ -64,35 +65,36 @@
   border-top: 1px solid var(--border-color);
   color: var(--accent-text);
   font-family: var(--font-heading);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-align: center;
-  padding: 6px;
+  padding: 5px 4px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .cs-age-badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
   background-color: rgba(31, 15, 13, 0.9);
   border: 1px solid var(--border-color);
   color: var(--accent-text);
   font-family: var(--font-heading);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 2px 6px;
+  padding: 2px 5px;
   border-radius: var(--radius-sm);
   z-index: 2;
 }
 
 /* Content Column */
 .cs-content-wrap {
-  padding: 24px 22px;
+  padding: 20px 22px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  justify-content: center;
 }
 
 .cs-genres-row {
@@ -104,51 +106,24 @@
 
 .cs-movie-title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: var(--accent-text);
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.01em;
+  transition: color var(--transition-fast);
+}
+
+.cs-movie-title:hover {
+  color: var(--white);
 }
 
 .cs-movie-tagline {
   font-family: var(--font-body);
   font-size: 0.88rem;
-  color: var(--accent-text);
+  color: var(--body-text);
   font-style: italic;
   line-height: 1.4;
-}
-
-.cs-movie-synopsis {
-  font-family: var(--font-body);
-  font-size: 0.86rem;
-  color: var(--body-text);
-  line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.cs-meta-row {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-top: 4px;
-}
-
-.cs-meta-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  color: var(--body-text);
-}
-
-.cs-meta-icon {
-  color: var(--accent-text);
-  flex-shrink: 0;
 }
 
 /* Actions Row */
@@ -156,19 +131,18 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: auto;
-  padding-top: 10px;
+  margin-top: 4px;
   flex-wrap: wrap;
 }
 
 .cs-trailer-btn {
-  padding: 10px 16px;
-  font-size: 0.86rem;
+  padding: 9px 14px;
+  font-size: 0.84rem;
 }
 
 .cs-details-btn {
-  padding: 9px 14px;
-  font-size: 0.86rem;
+  padding: 8px 12px;
+  font-size: 0.84rem;
 }
 
 @media (max-width: 960px) {
@@ -177,12 +151,12 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 540px) {
   .coming-soon-featured-card {
     grid-template-columns: 1fr;
   }
   .cs-poster-wrap {
-    min-height: 240px;
+    min-height: 200px;
     aspect-ratio: 16/9;
   }
 }

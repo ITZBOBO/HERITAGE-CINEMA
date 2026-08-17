@@ -75,12 +75,12 @@ export const HeroCarousel = () => {
             <div className="hero-left-info">
               {/* Badge & Certification */}
               <div className="hero-pill-row">
-                <span className="hero-experience-badge">PREMIUM CINEMA</span>
+                <span className="hero-experience-badge">NOW SHOWING</span>
+                {currentMovie.category && (
+                  <span className="hero-format-pill">{currentMovie.category.toUpperCase()}</span>
+                )}
                 {currentMovie.ageRating && (
                   <span className="hero-age-badge">{currentMovie.ageRating}</span>
-                )}
-                {currentMovie.formats && currentMovie.formats.includes('DOLBY') && (
-                  <span className="hero-format-pill">DOLBY ATMOS</span>
                 )}
               </div>
 

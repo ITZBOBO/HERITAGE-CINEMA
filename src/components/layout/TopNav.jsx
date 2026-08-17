@@ -30,7 +30,7 @@ export const TopNav = () => {
       <div className="container main-header-container">
         {/* Left: Official Heritage Cinemas Transparent Logo */}
         <Link to="/" className="site-logo-brand" onClick={() => setMobileMenuOpen(false)}>
-          <HeritageLogo height={50} />
+          <HeritageLogo height={56} />
         </Link>
 
         {/* Center: Navigation Links */}
