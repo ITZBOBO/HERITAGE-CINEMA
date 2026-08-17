@@ -1,0 +1,140 @@
+.auth-page-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 16px;
+  min-height: calc(100vh - 200px);
+}
+
+.auth-form-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 36px 32px;
+  border-radius: var(--radius-card);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.auth-form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.auth-logo-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background-color: var(--primary-accent);
+  color: var(--white);
+  border-radius: var(--radius-btn);
+  margin-bottom: 8px;
+  box-shadow: 0 4px 16px rgba(186, 0, 1, 0.4);
+}
+
+.auth-title {
+  font-size: 1.6rem;
+  color: var(--accent-text);
+}
+
+.auth-subtitle {
+  font-size: 0.88rem;
+  color: var(--body-text);
+  opacity: 0.85;
+}
+
+.auth-error-banner {
+  background-color: rgba(186, 0, 1, 0.15);
+  border: 1px solid var(--primary-accent);
+  color: #ffb4a8;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+}
+
+.auth-actual-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label-with-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-text);
+}
+
+.forgot-link {
+  font-size: 0.8rem;
+  color: var(--accent-text);
+  text-decoration: underline;
+}
+
+.input-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+.field-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.field-input {
+  padding-left: 42px;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  margin-top: 6px;
+}
+
+.auth-demo-hint {
+  background-color: var(--surface-variant);
+  border: 1px solid var(--border-color);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.auth-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: var(--body-text);
+  border-top: 1px solid var(--border-color);
+  padding-top: 18px;
+}
+
+.auth-switch-link {
+  color: var(--accent-text);
+  font-weight: 700;
+  text-decoration: underline;
+}

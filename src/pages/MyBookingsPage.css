@@ -1,0 +1,133 @@
+.my-bookings-page-wrap {
+  padding: 48px 0 64px;
+}
+
+.booking-success-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  border-radius: var(--radius-card);
+  border-color: #4ade80;
+  background-color: rgba(74, 222, 128, 0.08);
+  margin-bottom: 36px;
+  animation: fadeIn 0.4s ease;
+}
+
+.banner-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+  flex-shrink: 0;
+}
+
+.banner-title {
+  font-size: 1.15rem;
+  color: #4ade80;
+  margin-bottom: 2px;
+}
+
+.banner-desc {
+  font-size: 0.9rem;
+  color: var(--body-text);
+  line-height: 1.4;
+}
+
+.my-bookings-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.header-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.my-bookings-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--accent-text);
+}
+
+.my-bookings-subtitle {
+  font-size: 0.95rem;
+  color: var(--body-text);
+  opacity: 0.85;
+}
+
+.bookings-filter-tabs {
+  display: flex;
+  align-items: center;
+  background-color: var(--surface-variant);
+  border: 1px solid var(--border-color);
+  padding: 4px;
+  border-radius: var(--radius-btn);
+}
+
+.booking-tab-btn {
+  padding: 8px 16px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--body-text);
+  border-radius: 8px;
+  transition: all var(--transition-fast);
+}
+
+.booking-tab-btn.active {
+  background-color: var(--primary-accent);
+  color: var(--white);
+  box-shadow: var(--shadow-accent);
+}
+
+.booking-tab-btn:hover:not(.active) {
+  color: var(--accent-text);
+}
+
+.bookings-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.no-bookings-card {
+  padding: 64px 24px;
+  border-radius: var(--radius-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 540px;
+  margin: 40px auto;
+}
+
+.no-bookings-icon {
+  color: var(--accent-text);
+  opacity: 0.5;
+}
+
+.no-bookings-title {
+  font-size: 1.4rem;
+  color: var(--accent-text);
+}
+
+.no-bookings-desc {
+  font-size: 0.95rem;
+  color: var(--body-text);
+  line-height: 1.5;
+}
+
+.no-bookings-cta {
+  margin-top: 8px;
+  padding: 12px 24px;
+}

@@ -1,0 +1,127 @@
+.booking-page-wrap {
+  padding: 40px 0 64px;
+}
+
+.booking-two-column-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 40px;
+  align-items: start;
+}
+
+.booking-main-step-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.booking-sidebar-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Step 6: Summary & Payment Form Cards */
+.summary-form-card {
+  padding: 28px 24px;
+  border-radius: var(--radius-card);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-card-title {
+  font-size: 1.15rem;
+  color: var(--accent-text);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+.form-fields-grid,
+.card-inputs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.span-two-cols {
+  grid-column: span 2;
+}
+
+.payment-options-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.payment-option-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--surface-variant);
+  border: 1px solid var(--border-color);
+  padding: 12px 18px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--body-text);
+  transition: all var(--transition-fast);
+  flex: 1;
+}
+
+.payment-option-pill input {
+  display: none;
+}
+
+.payment-option-pill:hover {
+  background-color: var(--surface-variant-2);
+  color: var(--accent-text);
+}
+
+.payment-option-pill.selected {
+  background-color: var(--surface-variant-2);
+  border-color: var(--primary-accent);
+  color: var(--accent-text);
+  box-shadow: 0 0 0 1px var(--primary-accent);
+}
+
+.terms-checkbox-wrap {
+  background-color: var(--surface-variant);
+  border: 1px solid var(--border-color);
+  padding: 16px 20px;
+  border-radius: var(--radius-card);
+}
+
+.checkbox-custom-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--body-text);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.checkbox-custom-label input {
+  margin-top: 4px;
+  accent-color: var(--primary-accent);
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 960px) {
+  .booking-two-column-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-fields-grid,
+  .card-inputs-grid {
+    grid-template-columns: 1fr;
+  }
+  .span-two-cols {
+    grid-column: span 1;
+  }
+}

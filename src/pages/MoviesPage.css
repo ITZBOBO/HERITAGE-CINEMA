@@ -1,0 +1,20 @@
+.movies-page-wrap {
+  padding: 48px 0 64px;
+}
+
+.movies-page-header {
+  margin-bottom: 32px;
+}
+
+.movies-page-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--accent-text);
+  margin-bottom: 8px;
+}
+
+.movies-page-subtitle {
+  font-size: 1rem;
+  color: var(--body-text);
+  opacity: 0.85;
+  max-width: 600px;
+}

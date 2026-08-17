@@ -1,0 +1,113 @@
+.coming-soon-poster-section {
+  padding: 16px 0 64px;
+}
+
+.coming-soon-main-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.no-movies-notice {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  font-weight: 500;
+  padding: 12px 0;
+}
+
+.coming-soon-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.coming-soon-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.coming-soon-poster-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/3;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #1a1b20;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform var(--transition-normal);
+  display: block;
+}
+
+.coming-soon-card:hover .coming-soon-poster-box {
+  transform: translateY(-6px);
+  border-color: rgba(124, 58, 237, 0.5);
+}
+
+.coming-soon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: filter var(--transition-fast);
+}
+
+.coming-soon-card:hover .coming-soon-img {
+  filter: brightness(1);
+}
+
+.coming-soon-badge-ribbon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(18, 19, 22, 0.9);
+  color: #a855f7;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.coming-soon-info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.coming-soon-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.coming-soon-genre {
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+@media (max-width: 1200px) {
+  .coming-soon-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .coming-soon-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .coming-soon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}

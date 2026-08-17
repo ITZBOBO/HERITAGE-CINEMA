@@ -1,0 +1,524 @@
+/* Shared Booking Step Layout & Components */
+.booking-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.step-header-area {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.step-main-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--accent-text);
+}
+
+.step-subtitle {
+  font-size: 0.95rem;
+  color: var(--body-text);
+  opacity: 0.9;
+}
+
+.highlight-text {
+  color: var(--accent-text);
+}
+
+/* Step 1: Locations Grid */
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.location-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: 1px solid var(--border-color);
+}
+
+.location-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-color-strong);
+}
+
+.location-card.selected {
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 2px var(--primary-accent), var(--shadow-card);
+}
+
+.location-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  background-color: var(--surface-variant);
+}
+
+.location-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.location-selected-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--primary-accent);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: var(--radius-badge);
+}
+
+.location-card-body {
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.location-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-text);
+}
+
+.location-address-row,
+.location-phone-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--body-text);
+  opacity: 0.85;
+}
+
+.loc-icon {
+  color: var(--accent-text);
+  flex-shrink: 0;
+}
+
+.location-features-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.btn-select-location {
+  width: 100%;
+  margin-top: auto;
+  padding: 10px;
+  font-size: 0.88rem;
+}
+
+/* Step 2: Dates Grid */
+.dates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+}
+
+.date-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 12px;
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+  gap: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.date-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-color-strong);
+  background-color: var(--card-surface-hover);
+}
+
+.date-card.selected {
+  background-color: var(--surface-variant-2);
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 2px var(--primary-accent), var(--shadow-card);
+}
+
+.date-tag-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.date-day-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.date-day-number {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent-text);
+  line-height: 1;
+  margin: 4px 0;
+}
+
+.date-month-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--body-text);
+}
+
+/* Step 3: Format & Time Selector */
+.format-showtimes-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.format-experience-card {
+  padding: 24px;
+  border-radius: var(--radius-card);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.format-experience-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.format-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.format-large-badge {
+  font-size: 0.82rem;
+  padding: 4px 10px;
+}
+
+.format-name {
+  font-size: 1.25rem;
+  color: var(--accent-text);
+}
+
+.format-desc {
+  font-size: 0.88rem;
+  color: var(--body-text);
+  opacity: 0.85;
+}
+
+.times-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.time-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--surface-variant);
+  border: 1px solid var(--border-color);
+  color: var(--body-text);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: var(--radius-btn);
+  transition: all var(--transition-fast);
+}
+
+.time-pill-btn:hover {
+  background-color: var(--surface-variant-2);
+  color: var(--accent-text);
+  border-color: var(--accent-text);
+}
+
+.time-pill-btn.selected {
+  background-color: var(--primary-accent);
+  border-color: var(--primary-accent);
+  color: var(--white);
+  box-shadow: var(--shadow-accent);
+}
+
+/* Step 4: Ticket Quantity Selector */
+.ticket-types-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ticket-type-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-radius: var(--radius-card);
+  gap: 20px;
+}
+
+.ticket-type-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ticket-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ticket-icon {
+  color: var(--accent-text);
+}
+
+.ticket-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-text);
+}
+
+.ticket-desc {
+  font-size: 0.85rem;
+  color: var(--body-text);
+  opacity: 0.85;
+}
+
+.ticket-price-tag {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--accent-text);
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+.stepper-counter-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--surface-variant);
+  border: 1px solid var(--border-color);
+  padding: 4px 8px;
+  border-radius: var(--radius-btn);
+}
+
+.counter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
+  color: var(--accent-text);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.counter-btn:hover:not(:disabled) {
+  background-color: var(--primary-accent);
+  color: var(--white);
+  border-color: var(--primary-accent);
+}
+
+.counter-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.counter-value {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--white);
+  min-width: 24px;
+  text-align: center;
+}
+
+.ticket-info-alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.info-icon {
+  color: var(--accent-text);
+  flex-shrink: 0;
+}
+
+/* Step 5: Snacks Grid */
+.snack-category-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.snack-cat-btn {
+  background-color: var(--surface-variant);
+  border: 1px solid var(--border-color);
+  color: var(--body-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius-badge);
+  transition: all var(--transition-fast);
+}
+
+.snack-cat-btn:hover {
+  background-color: var(--surface-variant-2);
+  color: var(--accent-text);
+}
+
+.snack-cat-btn.active {
+  background-color: var(--primary-accent);
+  border-color: var(--primary-accent);
+  color: var(--white);
+}
+
+.snacks-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.snack-item-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.snack-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  background-color: var(--surface-variant);
+}
+
+.snack-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.snack-badge-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--primary-accent);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-badge);
+}
+
+.snack-info-wrap {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.snack-category-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.snack-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-text);
+  line-height: 1.2;
+}
+
+.snack-desc {
+  font-size: 0.8rem;
+  color: var(--body-text);
+  opacity: 0.8;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.snack-price-and-counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.snack-price {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent-text);
+}
+
+/* Step Footer Navigation */
+.step-action-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.step-back-btn {
+  padding: 12px 20px;
+}
+
+.step-continue-btn {
+  padding: 12px 24px;
+  margin-left: auto;
+}
+
+@media (max-width: 640px) {
+  .ticket-type-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .stepper-counter-controls {
+    align-self: flex-end;
+  }
+}

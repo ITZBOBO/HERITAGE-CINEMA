@@ -1,0 +1,160 @@
+.top-utility-system {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1. Benefit Banner */
+.top-benefit-bar {
+  background: linear-gradient(90deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 6px 12px;
+  letter-spacing: 0.02em;
+}
+
+.benefit-link {
+  color: #ffffff;
+  text-decoration: underline;
+  transition: opacity var(--transition-fast);
+}
+
+.benefit-link:hover {
+  opacity: 0.85;
+}
+
+/* 2. Sub-Utility Bar */
+.sub-utility-bar {
+  background-color: #121316;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px 0;
+  width: 100%;
+}
+
+.sub-utility-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.location-picker-wrap {
+  position: relative;
+}
+
+.location-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1c1d22;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  transition: all var(--transition-fast);
+}
+
+.location-dropdown-trigger:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: #24262c;
+}
+
+.location-icon {
+  color: #a855f7;
+}
+
+.chevron-icon {
+  transition: transform var(--transition-fast);
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.location-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 320px;
+  background-color: #1a1b20;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 8px;
+  z-index: 200;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.2s ease;
+}
+
+.dropdown-header-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #9ca3af;
+  padding: 6px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.location-option-item {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: background-color var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.location-option-item:hover {
+  background-color: #262830;
+}
+
+.location-option-item.active {
+  background-color: #3b185f;
+  border: 1px solid #8b5cf6;
+}
+
+.loc-opt-name {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.loc-opt-address {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.utility-quick-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.quick-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #d1d5db;
+  transition: color var(--transition-fast);
+}
+
+.quick-link-btn:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .utility-quick-links {
+    display: none;
+  }
+}

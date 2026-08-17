@@ -1,0 +1,126 @@
+.movie-details-page-wrap {
+  padding-bottom: 64px;
+}
+
+.details-back-bar {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+}
+
+.back-to-movies-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--body-text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color var(--transition-fast);
+}
+
+.back-to-movies-link:hover {
+  color: var(--accent-text);
+}
+
+.details-body-container {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  padding-top: 48px;
+}
+
+.details-main-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-sidebar-column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Similar Movies Grid */
+.similar-movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.similar-movie-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-input);
+  transition: transform var(--transition-fast);
+}
+
+.similar-movie-card:hover {
+  transform: translateY(-4px);
+}
+
+.similar-poster-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  background-color: var(--surface-variant);
+  display: block;
+}
+
+.similar-poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.similar-rating-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--primary-accent);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: var(--radius-badge);
+}
+
+.similar-info {
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.similar-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-text);
+  line-height: 1.2;
+}
+
+.similar-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.similar-book-btn {
+  margin-top: auto;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 960px) {
+  .details-body-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
