@@ -8,10 +8,9 @@
   gap: 20px;
   padding: 20px 24px;
   border-radius: var(--radius-card);
-  border-color: #4ade80;
-  background-color: rgba(74, 222, 128, 0.08);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-variant);
   margin-bottom: 36px;
-  animation: fadeIn 0.4s ease;
 }
 
 .banner-icon-wrap {
@@ -21,18 +20,21 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: rgba(74, 222, 128, 0.2);
-  color: #4ade80;
+  background-color: var(--surface-variant-2);
+  color: var(--accent-text);
   flex-shrink: 0;
 }
 
 .banner-title {
+  font-family: var(--font-heading);
   font-size: 1.15rem;
-  color: #4ade80;
+  font-weight: 700;
+  color: var(--accent-text);
   margin-bottom: 2px;
 }
 
 .banner-desc {
+  font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--body-text);
   line-height: 1.4;
@@ -54,14 +56,16 @@
 }
 
 .my-bookings-title {
+  font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
   color: var(--accent-text);
 }
 
 .my-bookings-subtitle {
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--body-text);
-  opacity: 0.85;
 }
 
 .bookings-filter-tabs {
@@ -77,16 +81,15 @@
   padding: 8px 16px;
   font-family: var(--font-heading);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--body-text);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
 }
 
 .booking-tab-btn.active {
   background-color: var(--primary-accent);
   color: var(--white);
-  box-shadow: var(--shadow-accent);
 }
 
 .booking-tab-btn:hover:not(.active) {
@@ -109,19 +112,23 @@
   gap: 16px;
   max-width: 540px;
   margin: 40px auto;
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
 }
 
 .no-bookings-icon {
   color: var(--accent-text);
-  opacity: 0.5;
 }
 
 .no-bookings-title {
+  font-family: var(--font-heading);
   font-size: 1.4rem;
+  font-weight: 700;
   color: var(--accent-text);
 }
 
 .no-bookings-desc {
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--body-text);
   line-height: 1.5;

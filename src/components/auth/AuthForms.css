@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 60px 24px;
-  background: radial-gradient(circle at top center, rgba(124, 58, 237, 0.12) 0%, transparent 60%);
+  background-color: var(--bg-primary);
 }
 
 .auth-form-card {
@@ -12,12 +12,12 @@
   max-width: 480px;
   padding: 36px 32px;
   border-radius: var(--radius-card);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
   gap: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: #121316;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-surface);
 }
 
 .auth-form-header {
@@ -36,29 +36,32 @@
   padding: 0;
   border: none;
   margin-bottom: 4px;
-  transition: transform var(--transition-fast);
+  transition: opacity var(--transition-fast);
 }
 
 .auth-logo-wrapper:hover {
-  transform: scale(1.03);
+  opacity: 0.9;
 }
 
 .auth-title {
+  font-family: var(--font-heading);
   font-size: 1.65rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--accent-text);
 }
 
 .auth-subtitle {
+  font-family: var(--font-body);
   font-size: 0.88rem;
-  color: #9ca3af;
+  color: var(--body-text);
   line-height: 1.5;
 }
 
 .auth-error-banner {
-  background-color: rgba(229, 9, 20, 0.15);
+  background-color: var(--surface-variant-2);
   border: 1px solid var(--primary-accent);
-  color: #ff8088;
+  color: var(--accent-text);
+  font-family: var(--font-body);
   font-size: 0.85rem;
   padding: 10px 14px;
   border-radius: var(--radius-sm);
@@ -82,9 +85,17 @@
   justify-content: space-between;
 }
 
+.form-label {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-text);
+}
+
 .forgot-pass-link {
+  font-family: var(--font-body);
   font-size: 0.78rem;
-  color: #a855f7;
+  color: var(--accent-text);
 }
 
 .forgot-pass-link:hover {
@@ -100,11 +111,25 @@
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #9ca3af;
+  color: var(--body-text);
+  display: block;
+  pointer-events: none;
+  flex-shrink: 0;
+  /* Prevent font emoji fallback on SVG icons */
+  font-size: 0;
+  line-height: 0;
+  z-index: 1;
+}
+
+/* Ensure SVG inside .field-icon is sized correctly */
+.field-icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
 }
 
 .field-input {
-  padding-left: 40px;
+  padding-left: 42px;
 }
 
 .auth-submit-btn {
@@ -119,14 +144,16 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  font-family: var(--font-body);
   font-size: 0.85rem;
-  color: #9ca3af;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--body-text);
+  border-top: 1px solid var(--border-color);
   padding-top: 16px;
 }
 
 .auth-switch-link {
-  color: #a855f7;
+  color: var(--accent-text);
+  font-family: var(--font-heading);
   font-weight: 700;
 }
 

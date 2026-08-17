@@ -6,8 +6,9 @@
 
 /* 1. Benefit Banner */
 .top-benefit-bar {
-  background: linear-gradient(90deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
-  color: #ffffff;
+  background-color: var(--primary-accent);
+  color: var(--white);
+  font-family: var(--font-heading);
   font-size: 0.78rem;
   font-weight: 700;
   text-align: center;
@@ -16,7 +17,7 @@
 }
 
 .benefit-link {
-  color: #ffffff;
+  color: var(--white);
   text-decoration: underline;
   transition: opacity var(--transition-fast);
 }
@@ -27,8 +28,8 @@
 
 /* 2. Sub-Utility Bar */
 .sub-utility-bar {
-  background-color: #121316;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--footer-bg);
+  border-bottom: 1px solid var(--border-color);
   padding: 8px 0;
   width: 100%;
 }
@@ -49,25 +50,26 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #1c1d22;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background-color: var(--surface-variant);
+  border: 1px solid var(--border-color);
+  color: var(--body-text);
   padding: 6px 14px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   font-family: var(--font-heading);
   font-size: 0.76rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.05em;
   transition: all var(--transition-fast);
 }
 
 .location-dropdown-trigger:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-  background-color: #24262c;
+  border-color: var(--border-solid);
+  background-color: var(--surface-variant-2);
+  color: var(--accent-text);
 }
 
 .location-icon {
-  color: #a855f7;
+  color: var(--accent-text);
 }
 
 .chevron-icon {
@@ -83,19 +85,19 @@
   top: calc(100% + 6px);
   left: 0;
   width: 320px;
-  background-color: #1a1b20;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
   padding: 8px;
   z-index: 200;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-  animation: fadeIn 0.2s ease;
+  box-shadow: var(--shadow-card);
 }
 
 .dropdown-header-title {
+  font-family: var(--font-heading);
   font-size: 0.75rem;
   font-weight: 700;
-  color: #9ca3af;
+  color: var(--accent-text);
   padding: 6px 8px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -105,7 +107,7 @@
   width: 100%;
   text-align: left;
   padding: 10px 12px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   transition: background-color var(--transition-fast);
   display: flex;
   flex-direction: column;
@@ -113,24 +115,24 @@
 }
 
 .location-option-item:hover {
-  background-color: #262830;
+  background-color: var(--surface-variant);
 }
 
 .location-option-item.active {
-  background-color: #3b185f;
-  border: 1px solid #8b5cf6;
+  background-color: var(--surface-variant-2);
+  border: 1px solid var(--primary-accent);
 }
 
 .loc-opt-name {
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--accent-text);
 }
 
 .loc-opt-address {
   font-size: 0.75rem;
-  color: #9ca3af;
+  color: var(--body-text);
 }
 
 .utility-quick-links {
@@ -143,14 +145,15 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-family: var(--font-body);
   font-size: 0.78rem;
-  font-weight: 600;
-  color: #d1d5db;
+  font-weight: 500;
+  color: var(--body-text);
   transition: color var(--transition-fast);
 }
 
 .quick-link-btn:hover {
-  color: #ffffff;
+  color: var(--accent-text);
 }
 
 @media (max-width: 640px) {

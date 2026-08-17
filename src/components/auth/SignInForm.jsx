@@ -45,7 +45,7 @@ export const SignInForm = () => {
     <div className="auth-form-card card-surface">
       <div className="auth-form-header">
         <Link to="/" className="auth-logo-wrapper">
-          <HeritageLogo height={42} />
+          <HeritageLogo height={60} />
         </Link>
         <h1 className="auth-title">Welcome Back</h1>
         <p className="auth-subtitle">Sign in to access your Heritage Cinema passes, rewards, and booking history.</p>

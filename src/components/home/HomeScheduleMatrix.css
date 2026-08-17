@@ -3,7 +3,7 @@
 }
 
 .flyer-header-banner {
-  background: linear-gradient(135deg, #ba0001 0%, #e50914 50%, #9b0000 100%);
+  background-color: var(--primary-accent);
   border-radius: var(--radius-card) var(--radius-card) 0 0;
   padding: 24px 28px;
   display: flex;
@@ -11,7 +11,6 @@
   gap: 14px;
   border: 1px solid var(--border-color);
   border-bottom: none;
-  box-shadow: 0 8px 24px rgba(229, 9, 20, 0.35);
 }
 
 .flyer-badge-row {
@@ -34,15 +33,15 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: var(--accent-gold);
+  background-color: var(--card-surface);
+  color: var(--accent-text);
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 195, 0, 0.4);
+  border-radius: var(--radius-badge);
+  border: 1px solid var(--border-color);
 }
 
 .flyer-title-row {
@@ -54,6 +53,7 @@
 }
 
 .flyer-main-title {
+  font-family: var(--font-heading);
   font-size: clamp(1.3rem, 3vw, 1.8rem);
   font-weight: 800;
   color: var(--white);
@@ -62,13 +62,13 @@
 
 .flyer-schedule-stamp {
   background-color: var(--card-surface);
-  color: var(--white);
+  color: var(--accent-text);
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   padding: 8px 18px;
-  border-radius: 20px;
+  border-radius: var(--radius-btn);
   border: 1px solid var(--border-color);
 }
 
@@ -77,7 +77,7 @@
   border-radius: 0 0 var(--radius-card) var(--radius-card);
   overflow: hidden;
   border-top: none;
-  background-color: #120404;
+  background-color: var(--card-surface);
 }
 
 .flyer-table-scroll {
@@ -92,8 +92,8 @@
 }
 
 .flyer-schedule-table thead tr {
-  background-color: #8b0000;
-  border-bottom: 2px solid rgba(229, 9, 20, 0.5);
+  background-color: var(--surface-variant-2);
+  border-bottom: 2px solid var(--border-color);
 }
 
 .flyer-schedule-table th {
@@ -101,7 +101,7 @@
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 800;
-  color: var(--white);
+  color: var(--accent-text);
   letter-spacing: 0.08em;
   text-align: center;
 }
@@ -117,16 +117,12 @@
 }
 
 .flyer-table-row {
-  border-bottom: 1px solid rgba(229, 9, 20, 0.2);
+  border-bottom: 1px solid var(--border-color);
   transition: background-color var(--transition-fast);
 }
 
-.flyer-table-row:nth-child(even) {
-  background-color: rgba(229, 9, 20, 0.06);
-}
-
 .flyer-table-row:hover {
-  background-color: rgba(229, 9, 20, 0.15);
+  background-color: var(--surface-variant);
 }
 
 .td-movie {
@@ -138,7 +134,7 @@
   font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 800;
-  color: var(--white);
+  color: var(--accent-text);
   text-transform: uppercase;
 }
 
@@ -151,7 +147,7 @@
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--accent-gold);
+  color: var(--body-text);
 }
 
 .td-slots {
@@ -166,7 +162,7 @@
   margin: 3px 0;
   background-color: var(--surface-variant);
   border: 1px solid var(--border-color);
-  color: var(--white);
+  color: var(--body-text);
   font-family: var(--font-heading);
   font-size: 0.84rem;
   font-weight: 800;
@@ -179,8 +175,6 @@
   background-color: var(--primary-accent);
   border-color: var(--primary-accent);
   color: var(--white);
-  transform: scale(1.04);
-  box-shadow: 0 2px 10px rgba(229, 9, 20, 0.6);
 }
 
 .no-slot {
@@ -194,7 +188,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background-color: #0d0202;
+  background-color: var(--footer-bg);
   border-top: 1px solid var(--border-color);
   flex-wrap: wrap;
   gap: 12px;
@@ -204,12 +198,13 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--body-text);
 }
 
 .pin-gold {
-  color: var(--accent-gold);
+  color: var(--accent-text);
   flex-shrink: 0;
 }
 
@@ -217,7 +212,7 @@
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 800;
-  color: var(--accent-gold);
+  color: var(--accent-text);
 }
 
 @media (max-width: 768px) {

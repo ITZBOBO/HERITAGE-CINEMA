@@ -25,6 +25,7 @@ export const HeritageLogo = ({
         border: 'none',
         padding: 0,
         objectFit: 'contain',
+        filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45)) contrast(1.05)',
         ...style
       }}
     />

@@ -6,6 +6,7 @@
   padding: 56px 0;
   display: flex;
   align-items: center;
+  background-color: var(--bg-secondary);
 }
 
 .details-hero-bg {
@@ -16,8 +17,7 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  filter: blur(20px) brightness(0.35);
-  transform: scale(1.1);
+  opacity: 0.25;
   z-index: 1;
 }
 
@@ -51,8 +51,8 @@
   flex-shrink: 0;
   border-radius: var(--radius-card);
   overflow: hidden;
-  border: 2px solid var(--border-color);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
   aspect-ratio: 2/3;
   background-color: var(--card-surface);
 }
@@ -77,6 +77,7 @@
 }
 
 .details-movie-title {
+  font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   color: var(--accent-text);
@@ -84,10 +85,10 @@
 }
 
 .details-tagline {
+  font-family: var(--font-body);
   font-size: 1.1rem;
   font-style: italic;
   color: var(--body-text);
-  opacity: 0.9;
 }
 
 .details-meta-pills {
@@ -109,6 +110,7 @@
   background-color: var(--surface-variant);
   border: 1px solid var(--border-color);
   color: var(--accent-text);
+  font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 4px 12px;

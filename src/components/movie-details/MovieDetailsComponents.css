@@ -4,7 +4,9 @@
 }
 
 .details-section-heading {
+  font-family: var(--font-heading);
   font-size: 1.4rem;
+  font-weight: 700;
   color: var(--accent-text);
   margin-bottom: 20px;
   position: relative;
@@ -22,6 +24,7 @@
 }
 
 .details-synopsis-text {
+  font-family: var(--font-body);
   font-size: 1.05rem;
   color: var(--body-text);
   line-height: 1.8;
@@ -33,11 +36,14 @@
   align-items: center;
   gap: 12px;
   padding: 16px 20px;
-  border-radius: var(--radius-input);
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
   width: fit-content;
 }
 
 .director-label {
+  font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--text-muted);
   font-weight: 500;
@@ -61,13 +67,14 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-radius: var(--radius-input);
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-fast);
 }
 
 .cast-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-color-strong);
+  border-color: var(--border-solid);
 }
 
 .cast-photo-wrap {
@@ -91,6 +98,7 @@
 }
 
 .cast-actor-name {
+  font-family: var(--font-heading);
   font-size: 0.92rem;
   font-weight: 700;
   color: var(--accent-text);
@@ -98,9 +106,9 @@
 }
 
 .cast-character-role {
+  font-family: var(--font-body);
   font-size: 0.8rem;
   color: var(--body-text);
-  opacity: 0.8;
   line-height: 1.2;
 }
 
@@ -109,6 +117,8 @@
   padding: 12px;
   border-radius: var(--radius-card);
   overflow: hidden;
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
 }
 
 .trailer-video-responsive {
@@ -116,7 +126,7 @@
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  border-radius: var(--radius-input);
+  border-radius: var(--radius-sm);
 }
 
 .trailer-video-responsive iframe {
@@ -133,10 +143,14 @@
   padding: 24px;
   border-radius: var(--radius-card);
   margin-bottom: 24px;
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
 }
 
 .specs-card-title {
+  font-family: var(--font-heading);
   font-size: 1.15rem;
+  font-weight: 700;
   color: var(--accent-text);
   margin-bottom: 18px;
 }
@@ -173,17 +187,19 @@
 }
 
 .spec-label {
+  font-family: var(--font-heading);
   font-size: 0.78rem;
-  color: var(--text-muted);
-  font-weight: 600;
+  color: var(--accent-text);
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .spec-value {
+  font-family: var(--font-body);
   font-size: 0.88rem;
   color: var(--body-text);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Book Ticket Sidebar Card */
@@ -195,6 +211,8 @@
   gap: 20px;
   position: sticky;
   top: 96px;
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
 }
 
 .book-card-header {
@@ -206,6 +224,7 @@
 }
 
 .book-card-badge {
+  font-family: var(--font-heading);
   font-size: 0.78rem;
   font-weight: 700;
   background-color: var(--surface-variant);
@@ -222,8 +241,9 @@
 }
 
 .price-from-label {
+  font-family: var(--font-body);
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: var(--body-text);
 }
 
 .price-value {
@@ -243,6 +263,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--body-text);
   line-height: 1.4;
@@ -261,8 +282,9 @@
 }
 
 .book-guarantee-note {
+  font-family: var(--font-body);
   font-size: 0.78rem;
-  color: var(--text-muted);
+  color: var(--body-text);
   text-align: center;
   line-height: 1.4;
 }

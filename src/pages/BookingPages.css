@@ -27,10 +27,15 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
 }
 
 .form-card-title {
+  font-family: var(--font-heading);
   font-size: 1.15rem;
+  font-weight: 700;
   color: var(--accent-text);
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 12px;
@@ -63,7 +68,8 @@
   padding: 12px 18px;
   border-radius: var(--radius-btn);
   cursor: pointer;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 0.9rem;
   color: var(--body-text);
   transition: all var(--transition-fast);
@@ -77,13 +83,13 @@
 .payment-option-pill:hover {
   background-color: var(--surface-variant-2);
   color: var(--accent-text);
+  border-color: var(--border-solid);
 }
 
 .payment-option-pill.selected {
   background-color: var(--surface-variant-2);
   border-color: var(--primary-accent);
   color: var(--accent-text);
-  box-shadow: 0 0 0 1px var(--primary-accent);
 }
 
 .terms-checkbox-wrap {
@@ -97,6 +103,7 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--body-text);
   line-height: 1.5;

@@ -14,14 +14,15 @@
   height: 40px;
   background-color: var(--surface-variant);
   border: 1px solid var(--border-color);
-  color: var(--accent-text);
+  color: var(--body-text);
   border-radius: var(--radius-btn);
   transition: all var(--transition-fast);
 }
 
 .pagination-arrow-btn:hover:not(:disabled) {
   background-color: var(--surface-variant-2);
-  border-color: var(--accent-text);
+  color: var(--accent-text);
+  border-color: var(--border-solid);
 }
 
 .pagination-arrow-btn:disabled {
@@ -41,7 +42,8 @@
   background-color: var(--surface-variant);
   border: 1px solid var(--border-color);
   color: var(--body-text);
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 0.9rem;
   border-radius: var(--radius-btn);
   transition: all var(--transition-fast);
@@ -50,11 +52,11 @@
 .pagination-num-btn:hover:not(.active) {
   background-color: var(--surface-variant-2);
   color: var(--accent-text);
+  border-color: var(--border-solid);
 }
 
 .pagination-num-btn.active {
   background-color: var(--primary-accent);
   border-color: var(--primary-accent);
   color: var(--white);
-  box-shadow: var(--shadow-accent);
 }

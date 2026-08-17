@@ -7,10 +7,15 @@
   position: sticky;
   top: 96px;
   width: 100%;
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
 }
 
 .summary-sidebar-title {
+  font-family: var(--font-heading);
   font-size: 1.2rem;
+  font-weight: 700;
   color: var(--accent-text);
   margin-bottom: 2px;
 }
@@ -43,6 +48,7 @@
 }
 
 .summary-movie-name {
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 700;
   color: var(--accent-text);
@@ -50,8 +56,9 @@
 }
 
 .summary-movie-meta {
+  font-family: var(--font-body);
   font-size: 0.78rem;
-  color: var(--text-muted);
+  color: var(--body-text);
 }
 
 .summary-meta-block {
@@ -68,6 +75,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-body);
   font-size: 0.84rem;
   color: var(--body-text);
 }
@@ -93,12 +101,14 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--accent-text);
 }
 
 .summary-empty-text {
+  font-family: var(--font-body);
   font-size: 0.82rem;
   color: var(--text-muted);
   font-style: italic;
@@ -114,12 +124,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--body-text);
 }
 
 .item-price {
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-weight: 700;
   color: var(--accent-text);
 }
 
@@ -133,6 +145,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: var(--font-body);
   font-size: 0.88rem;
   color: var(--body-text);
 }
@@ -165,8 +178,9 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
+  font-family: var(--font-body);
   font-size: 0.76rem;
-  color: var(--text-muted);
+  color: var(--body-text);
   background-color: var(--surface-variant);
   padding: 8px;
   border-radius: var(--radius-sm);
@@ -174,7 +188,7 @@
 }
 
 .guarantee-icon {
-  color: #4ade80;
+  color: var(--accent-text);
 }
 
 .summary-proceed-btn {

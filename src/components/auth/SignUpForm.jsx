@@ -57,7 +57,7 @@ export const SignUpForm = () => {
     <div className="auth-form-card card-surface">
       <div className="auth-form-header">
         <Link to="/" className="auth-logo-wrapper">
-          <HeritageLogo height={42} />
+          <HeritageLogo height={60} />
         </Link>
         <h1 className="auth-title">Join Heritage Cinemas</h1>
         <p className="auth-subtitle">Create an account to book tickets, save favorites, and manage your cinema passes.</p>

@@ -31,7 +31,7 @@ export const Footer = () => {
           <div className="footer-col-solution">
             <span className="solution-label">Cinema Solution By</span>
             <Link to="/" className="footer-logo-link">
-              <HeritageLogo height={32} />
+              <HeritageLogo height={44} />
             </Link>
             <p className="footer-branch-note">
               Abule-Egba, Lagos & Mowe, Ogun State
@@ -86,35 +86,6 @@ export const Footer = () => {
               </form>
             )}
 
-            {/* Mobile App Downloads */}
-            <div className="mobile-app-download-section">
-              <span className="mobile-app-label">Switch to our mobile experience</span>
-              <div className="app-badges-row">
-                <button
-                  type="button"
-                  className="app-badge-btn"
-                  onClick={() => alert('Heritage Cinemas App on Google Play Store.')}
-                >
-                  <div className="app-icon-play">▶</div>
-                  <div className="app-text-group">
-                    <span className="app-sub-text">GET IT ON</span>
-                    <span className="app-main-text">Google Play</span>
-                  </div>
-                </button>
-
-                <button
-                  type="button"
-                  className="app-badge-btn"
-                  onClick={() => alert('Heritage Cinemas App on Apple App Store.')}
-                >
-                  <div className="app-icon-apple"></div>
-                  <div className="app-text-group">
-                    <span className="app-sub-text">Download on the</span>
-                    <span className="app-main-text">App Store</span>
-                  </div>
-                </button>
-              </div>
-            </div>
           </div>
 
           {/* Col 3: Navigation Links Column 1 */}

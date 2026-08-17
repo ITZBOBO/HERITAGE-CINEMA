@@ -41,7 +41,7 @@
   border-radius: 50%;
   background-color: var(--surface-variant);
   border: 1px solid var(--border-color);
-  color: var(--text-muted);
+  color: var(--body-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +51,7 @@
 
 .stepper-node.completed .node-icon-circle {
   background-color: var(--surface-variant-2);
-  border-color: var(--accent-text);
+  border-color: var(--border-solid);
   color: var(--accent-text);
 }
 
@@ -59,7 +59,6 @@
   background-color: var(--primary-accent);
   border-color: var(--primary-accent);
   color: var(--white);
-  box-shadow: 0 0 14px rgba(186, 0, 1, 0.45);
 }
 
 .node-text-wrap {
@@ -68,6 +67,7 @@
 }
 
 .node-step-label {
+  font-family: var(--font-body);
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;

@@ -4,16 +4,18 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
   transition: border-color var(--transition-fast);
 }
 
 .user-booking-card:hover {
-  border-color: var(--border-color-strong);
+  border-color: var(--border-solid);
 }
 
 .user-booking-card.cancelled-card {
   opacity: 0.6;
-  filter: grayscale(0.4);
 }
 
 .booking-card-top {
@@ -55,7 +57,7 @@
   font-family: var(--font-heading);
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: var(--accent-text);
   letter-spacing: 0.05em;
 }
 
@@ -63,6 +65,7 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  font-family: var(--font-heading);
   font-size: 0.75rem;
   font-weight: 700;
   padding: 3px 8px;
@@ -70,24 +73,25 @@
 }
 
 .status-confirmed {
-  background-color: rgba(74, 222, 128, 0.15);
-  color: #4ade80;
-  border: 1px solid rgba(74, 222, 128, 0.3);
+  background-color: var(--surface-variant-2);
+  color: var(--accent-text);
+  border: 1px solid var(--border-color);
 }
 
 .status-rescheduled {
-  background-color: rgba(251, 191, 36, 0.15);
-  color: #fbbf24;
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  background-color: var(--surface-variant);
+  color: var(--accent-text);
+  border: 1px solid var(--border-color);
 }
 
 .status-cancelled {
-  background-color: rgba(239, 68, 68, 0.15);
-  color: #ef4444;
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  background-color: var(--surface-variant);
+  color: var(--body-text);
+  border: 1px solid var(--border-color);
 }
 
 .booking-movie-name {
+  font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--accent-text);
@@ -105,6 +109,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--body-text);
 }
@@ -116,6 +121,7 @@
 
 .format-strong {
   color: var(--accent-text);
+  font-weight: 600;
 }
 
 .booking-items-summary {
@@ -133,7 +139,7 @@
 }
 
 .items-icon {
-  color: var(--text-muted);
+  color: var(--accent-text);
 }
 
 .items-text {
@@ -147,6 +153,7 @@
   background-color: var(--surface-variant);
   border: 1px solid var(--border-color);
   color: var(--body-text);
+  font-family: var(--font-body);
   font-size: 0.78rem;
   padding: 2px 8px;
   border-radius: var(--radius-badge);
@@ -173,8 +180,9 @@
 }
 
 .paid-label {
+  font-family: var(--font-body);
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: var(--body-text);
 }
 
 .paid-amount {
@@ -197,11 +205,11 @@
 }
 
 .booking-cancel-btn {
-  color: #ff8585;
+  color: var(--accent-text);
 }
 
 .booking-cancel-btn:hover {
-  background-color: rgba(186, 0, 1, 0.15);
+  background-color: var(--surface-variant-2);
   border-color: var(--primary-accent);
 }
 
@@ -212,14 +220,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(12, 6, 5, 0.8);
-  backdrop-filter: blur(6px);
+  background-color: rgba(25, 10, 8, 0.85);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  animation: fadeIn 0.2s ease;
 }
 
 .booking-modal-box {
@@ -230,14 +236,17 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  background-color: var(--card-surface);
+  border: 1px solid var(--border-color);
   box-shadow: var(--shadow-card);
 }
 
 .modal-alert-icon {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background-color: rgba(186, 0, 1, 0.15);
+  background-color: var(--surface-variant);
+  border: 1px solid var(--border-color);
   color: var(--accent-text);
   display: flex;
   align-items: center;
@@ -245,11 +254,14 @@
 }
 
 .modal-title {
+  font-family: var(--font-heading);
   font-size: 1.35rem;
+  font-weight: 700;
   color: var(--accent-text);
 }
 
 .modal-desc {
+  font-family: var(--font-body);
   font-size: 0.92rem;
   color: var(--body-text);
   line-height: 1.5;
